@@ -1,0 +1,60 @@
+/* app/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-darkText bg-light;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+@layer base {
+  a:focus:focus-visible,
+  button:focus:focus-visible,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    @apply ring-2 outline-none ring-offset-2;
+  }
+}
+
+@layer base {
+  a:focus:focus-visible,
+  a:hover {
+    @apply md:underline underline-offset-4 rounded-md;
+  }
+
+  a:focus {
+    @apply ring-accent;
+  }
+
+  button:focus:focus-visible,
+  button:hover {
+    @apply ring-accent rounded-md md:underline underline-offset-4;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    @apply ring-primary bg-light border-primary;
+  }
+}
