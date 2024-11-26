@@ -49,7 +49,7 @@ const SideProjects: React.FC = () => {
   ];
 
   return (
-    <section className="max-w-[1060px] mx-auto py-12 px-6 md:px-10 flex flex-col ">
+    <section className=" mx-auto py-12 px-6 md:px-10 flex flex-col ">
       {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: 50 }}

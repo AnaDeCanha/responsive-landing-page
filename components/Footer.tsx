@@ -9,7 +9,7 @@ import Twitter from "@mui/icons-material/Twitter";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-primary text-accent py-12 px-6 md:px-10">
-      <div className="max-w-[1060px] mx-auto flex flex-col gap-10">
+      <div className=" mx-auto flex flex-col gap-10">
         {/* Newsletter Section */}
         <div className="flex flex-col gap-4">
           <h2 className="text-subheadingMobile font-semibold text-accent">

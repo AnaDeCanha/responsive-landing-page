@@ -57,7 +57,7 @@ const Services: React.FC = () => {
 
   return (
     <section
-      className="py-12 px-6 md:px-10 max-w-[1060px] mx-auto flex flex-col gap-8"
+      className="py-12 px-6 md:px-10 mx-auto flex flex-col gap-8"
       id="services"
     >
       <h2 className="text-headingMobile md:text-headingDesktop font-bold text-darkText mb-8">
