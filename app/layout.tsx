@@ -1,8 +1,8 @@
 import "../app/globals.css";
 
 export const metadata = {
-  title: "Ana De Canha",
-  description: "Ana's website",
+  title: "SolCraft Studios",
+  description: "SolCraft Studios",
 };
 
 export default function RootLayout({

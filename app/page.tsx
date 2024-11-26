@@ -9,11 +9,11 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <MessageCard />
-      <Services />
-      <SideProjects />
-      <Footer />
+      {/* <Hero /> */}
+      {/* <MessageCard /> */}
+      {/* <Services /> */}
+      {/* <SideProjects /> */}
+      {/* <Footer /> */}
     </>
   );
 }

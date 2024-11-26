@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @apply font-sans text-darkText bg-light;
+  @apply font-roboto text-midnightBlack bg-softWhite;
   margin: 0;
   padding: 0;
 }
@@ -44,17 +44,17 @@ body {
   }
 
   a:focus {
-    @apply ring-accent;
+    @apply ring-deepPurple;
   }
 
   button:focus:focus-visible,
   button:hover {
-    @apply ring-accent rounded-md md:underline underline-offset-4;
+    @apply ring-deepPurple rounded-md md:underline underline-offset-4;
   }
 
   input:focus,
   textarea:focus,
   select:focus {
-    @apply ring-primary bg-light border-primary;
+    @apply ring-sunsetOrange bg-softWhite border-sunsetOrange;
   }
 }

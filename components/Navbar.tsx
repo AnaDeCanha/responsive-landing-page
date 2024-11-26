@@ -14,21 +14,21 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-primary shadow-md">
-      <div className="flex justify-between items-center max-w-[1060px] w-full px-8 h-12 mx-auto">
-        <Image src="/logo-small.png" alt="Logo" width={40} height={40} />
-        <div className="flex space-x-4">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-softWhite shadow-md rounded-3xl">
+      <div className="flex justify-between items-center max-w-[1060px] w-full px-16 h-12 mx-auto">
+        <Image src="/logo-small.png" alt="Logo" width={150} height={100} />
+        <div className="flex space-x-4 font-poppins">
           <Link
             href="#services"
-            className="text-accent font-bold text-buttonText py-2 px-4"
+            className="text-deepPurple font-semiBold text-buttonText py-2 px-4"
           >
-            SERVICES
+            Services
           </Link>
           <Button
-            className="text-accent font-bold text-buttonText py-2 px-4"
+            className="text-deepPurple font-semiBold text-buttonText py-2 px-4"
             onClick={handleContactClick}
           >
-            CONTACT
+            Contact
           </Button>
         </div>
       </div>
