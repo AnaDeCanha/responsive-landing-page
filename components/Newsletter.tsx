@@ -121,7 +121,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
                 onClick={() => setIsDialogOpen(false)}
               />
               <Image
-                src="/heart.png"
+                src="/s-icon.png"
                 alt="Logo"
                 width={40}
                 height={40}
@@ -166,7 +166,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
               className="relative bg-light py-16 px-20 rounded-md shadow-lg max-w-md mx-auto"
             >
               <Image
-                src="/heart.png"
+                src="/s-icon.png"
                 alt="Logo"
                 width={40}
                 height={40}

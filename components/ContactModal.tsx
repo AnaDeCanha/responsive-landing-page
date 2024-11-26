@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Dialog } from "@headlessui/react";
 import WestIcon from "@mui/icons-material/West";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Twitter from "@mui/icons-material/Twitter";
@@ -147,11 +146,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="max-w-[1012px] bg-light flex flex-col justify-center p-8 h-full md:h-[600px] md:p-32 w-full relative md:rounded-2xl shadow md:shadow-lg text-center"
+              className="max-w-[1012px] bg-light flex flex-col justify-center p-8 h-full md:h-[600px] md:p-32 w-full relative md:rounded-3xl shadow md:shadow-lg text-center"
             >
               <WestIcon
                 fontSize="small"
-                className="absolute top-6 left-6 text-accent cursor-pointer"
+                className="absolute top-6 left-6 text-midnightBlack cursor-pointer"
                 onClick={handleForClose}
               />
 
@@ -164,10 +163,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 className="absolute bottom-6 right-6"
               >
                 <Image
-                  src="/heart.png"
+                  src="/s-icon.png"
                   alt="Logo"
-                  width={40}
-                  height={40}
+                  width={15}
+                  height={15}
                   className={loading ? "animate-spin-slow" : ""}
                 />
               </motion.div>
@@ -175,8 +174,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               {/* Main Content */}
               {!isSubmitted ? (
                 <>
-                  <h2 className="text-subheadingMobile md:text-subheadingDesktop font-semiBold my-6 text-accent">
-                    ¡Hola! Got something in mind? Let’s chat!
+                  <h2 className="text-subheadingMobile text-deepPurple md:text-subheadingDesktop font-semiBold my-6 text-deepPurple">
+                    Let&apos;s Create Something Amazing Together!
                   </h2>
                   <form onSubmit={handleFormSubmit} noValidate>
                     <div>
@@ -184,7 +183,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         type="text"
                         name="name"
                         placeholder="Your Name"
-                        className="w-full p-2 mb-4 border rounded-md bg-light border-accent placeholder-accent placeholder-opacity-50"
+                        className="w-full p-3 mb-4 border-3xl rounded-3xl bg-light border-deepPurple placeholder-accent placeholder-opacity-50"
                         required
                         value={formData.name}
                         onChange={handleChange}
@@ -200,7 +199,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         type="email"
                         name="email"
                         placeholder="Your Email"
-                        className="w-full p-2 mb-4 border rounded-md bg-light border-accent placeholder-accent placeholder-opacity-50"
+                        className="w-full p-3 mb-4 rounded-3xl bg-light border-deepPurple placeholder-accent placeholder-opacity-50"
                         required
                         value={formData.email}
                         onChange={handleChange}
@@ -215,7 +214,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       <Textarea
                         name="message"
                         placeholder="Your Message"
-                        className="w-full p-2 mb-4 border h-32 rounded-md bg-light border-accent placeholder-accent placeholder-opacity-50"
+                        className="w-full p-3 mb-4  h-32 rounded-3xl bg-light border-deepPurple placeholder-accent placeholder-opacity-50"
                         required
                         value={formData.message}
                         onChange={handleChange}
@@ -235,7 +234,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                     >
                       <Button
                         type="submit"
-                        className={`block m-auto md:w-auto rounded-md bg-primary text-accent font-bold text-buttonText py-4 px-10 w-full ${
+                        className={`block m-auto md:w-auto rounded-[60px] border-2 border-deepPurple text-deepPurple font-bold text-buttonText py-4 px-10 w-full ${
                           loading
                             ? "opacity-50 cursor-not-allowed "
                             : "hover:underline"
@@ -254,26 +253,15 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 </>
               ) : (
                 <div className="flex flex-col items-center justify-center">
-                  <h2 className="text-subheadingMobile md:text-subheadingDesktop font-semiBold my-6 text-accent">
+                  <h2 className="text-subheadingMobile md:text-subheadingDesktop font-semiBold my-6 text-deepPurple">
                     Thank you for reaching out!
                   </h2>
                   <p className="text-text leading-normal mb-4">
-                    Your message has been sent successfully. I&apos;ll get back
-                    to you soon!
+                    Thank you for reaching out! While we review your message,
+                    why not follow us on social media for updates, inspiration,
+                    and behind-the-scenes fun?
                   </p>
-                  <p className="text-text leading-normal mb-4">
-                    In the meantime, feel free to follow me on social media:
-                  </p>
-                  <div className="flex gap-3 md:gap-6 items-center text-accent">
-                    <a
-                      href="https://github.com/AnaDeCanha"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 flex-col  "
-                    >
-                      <GitHubIcon fontSize="large" />
-                      <span>GitHub</span>
-                    </a>
+                  <div className="flex gap-3 md:gap-6 items-center text-deepPurple">
                     <a
                       href="https://www.youtube.com/@AnaDeCanha"
                       target="_blank"
@@ -299,7 +287,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       className="flex items-center gap-2 flex-col  "
                     >
                       <Twitter fontSize="large" className="py-1" />
-                      <span>Twitter 😜</span>
+                      <span>Twitter</span>
                     </a>
                   </div>
                 </div>

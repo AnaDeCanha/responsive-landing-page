@@ -40,7 +40,7 @@ body {
 @layer base {
   a:focus:focus-visible,
   a:hover {
-    @apply md:underline underline-offset-4 rounded-md;
+    @apply md:underline underline-offset-4  rounded-[60px];
   }
 
   a:focus {
@@ -49,12 +49,12 @@ body {
 
   button:focus:focus-visible,
   button:hover {
-    @apply ring-deepPurple rounded-md md:underline underline-offset-4;
+    @apply ring-deepPurple md:underline  rounded-[60px] underline-offset-4;
   }
 
   input:focus,
   textarea:focus,
   select:focus {
-    @apply ring-sunsetOrange bg-softWhite border-sunsetOrange;
+    @apply ring-deepPurple bg-softWhite border-deepPurple;
   }
 }

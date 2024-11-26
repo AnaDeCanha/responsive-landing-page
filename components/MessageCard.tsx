@@ -36,7 +36,7 @@ const MessageCard: React.FC = () => {
         design, productivity, and learning languages—I speak three!
       </p>
       <Image
-        src="/heart.png"
+        src="/s-icon.png"
         alt="Heart Icon"
         width={40}
         height={40}
