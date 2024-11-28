@@ -10,6 +10,9 @@ export default function HomePage() {
     <>
       <Navbar />
       <Hero />
+      <Hero />
+      <Hero />
+      <Hero />
       {/* <MessageCard /> */}
       {/* <Services /> */}
       {/* <SideProjects /> */}

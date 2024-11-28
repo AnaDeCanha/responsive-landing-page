@@ -4,14 +4,29 @@ import { motion, useScroll, useTransform } from "motion/react";
 
 const Hero: React.FC = () => {
   const { scrollY } = useScroll();
-  const parallax = useTransform(scrollY, [0, 500], [0, -100]);
+
+  // Map scrollY to dynamic background color
+  const backgroundColor = useTransform(
+    scrollY,
+    [300, 500], // Adjust range to match scroll progress
+    ["#FAFAFA", "#7D3C98"] // Correspond to softWhite and sunsetOrange
+  );
+
+  // Parallax effect for the image
+  const parallax = useTransform(scrollY, [0, 1000], [0, -200]);
 
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col justify-center items-start mt-16 px-16 py-12"
+      className="relative flex flex-col justify-center items-start mt-16 px-16 py-12"
     >
+      {/* Background */}
+      <motion.div
+        style={{ backgroundColor }} // Inline style for dynamic colors
+        className="absolute inset-0 -z-10 transition-colors duration-500"
+      />
+
       {/* Title */}
       <div className="text-left">
         <motion.div
@@ -77,24 +92,16 @@ const Hero: React.FC = () => {
       {/* Image */}
       <motion.div
         style={{ y: parallax }}
-        variants={{
-          hidden: { opacity: 0, y: 50 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.7, delay: 1.5 },
-          },
-        }}
-        className="mt-8 w-full flex justify-center items-center overflow-hidden"
+        className="mt-8 w-full h-[600px] relative overflow-hidden"
       >
-        <Image
-          src="/hero-image.webp"
-          alt="Hero Image"
-          layout="responsive"
-          width={1200}
-          height={600}
-          className="w-full max-h-[600px] object-cover rounded-2xl"
-        />
+        <motion.div style={{ y: parallax }} className="absolute inset-0">
+          <Image
+            src="/hero-image.webp"
+            alt="Hero Image"
+            layout="fill"
+            className="object-cover rounded-[60px]"
+          />
+        </motion.div>
       </motion.div>
     </motion.div>
   );
