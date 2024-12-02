@@ -28,20 +28,11 @@ const MessageCard: React.FC = () => {
         duration: 0.7,
         delay: isMobile ? 0.5 : 1.2, // Apply delay for desktop animation
       }}
-      className="bg-primary rounded-2xl w-full max-w-[996px] mx-auto p-8 md:p-8 relative"
+      className="bg-deepPurple rounded-br-[60px] rounded-bl-[60px] w-full mx-auto p-8 md:p-8 relative flex justify-center"
     >
-      <p className="text-subheadingMobile md:text-subheadingDesktop text-accent py-6 md:p-8">
-        ¡Hola! I&apos;m Ana, a Frontend Developer who blends technology and
-        creativity to craft user-focused web experiences. Passionate about web
-        design, productivity, and learning languages—I speak three!
+      <p className="text-subheadingMobile md:text-subheadingDesktop text-brightYellow py-6 md:p-8 max-w-[720px]">
+        We craft bold, captivating art that brings your vision to life.
       </p>
-      <Image
-        src="/s-icon.png"
-        alt="Heart Icon"
-        width={40}
-        height={40}
-        className="absolute bottom-6 right-6"
-      />
     </motion.div>
   );
 };

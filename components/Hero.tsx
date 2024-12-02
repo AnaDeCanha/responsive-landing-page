@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   // Map scrollY to dynamic background color
   const backgroundColor = useTransform(
     scrollY,
-    [300, 500], // Adjust range to match scroll progress
+    [0, 100], // Adjust range to match scroll progress
     ["#FAFAFA", "#7D3C98"] // Correspond to softWhite and sunsetOrange
   );
 
@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
       {/* Background */}
       <motion.div
         style={{ backgroundColor }} // Inline style for dynamic colors
-        className="absolute inset-0 -z-10 transition-colors duration-500"
+        className="absolute inset-0 -z-10 transition-colors duration-200"
       />
 
       {/* Title */}
