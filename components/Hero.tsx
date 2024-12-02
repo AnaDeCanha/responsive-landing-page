@@ -1,10 +1,13 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
 const Hero: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0.25, 0.5], [1, 1.5]);
+
   return (
     <section className="relative w-full h-auto">
       <div className="flex flex-col items-center justify-center px-4 md:px-16 py-16">
@@ -31,7 +34,8 @@ const Hero: React.FC = () => {
           className="relative w-full h-[400px] md:h-[1000px] px-4 md:px-16 mt-8 overflow-hidden rounded-[60px]"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
+          style={{ scale }}
         >
           <Image
             src="/hero-image.webp"
