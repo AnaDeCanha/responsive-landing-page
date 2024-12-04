@@ -10,8 +10,18 @@ const Hero: React.FC = () => {
   // Scale animation: Grow, then shrink
   const scale = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [1, 1.5, 1]);
 
+  // Background color transition
+  const backgroundColor = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.3, 0.5],
+    ["#FAFAFA", "#FAFAFA", "#FAFAFA", "#7D3C98"]
+  );
+
   return (
-    <section className="relative w-full h-auto overflow-hidden">
+    <motion.section
+      style={{ backgroundColor }} // Apply dynamic background color
+      className="relative w-full h-auto overflow-hidden mt-16"
+    >
       <div className="flex flex-col items-center justify-center px-4 md:px-16 py-16">
         {/* Title */}
         <h1 className="font-poppins font-bold text-headingMobile md:text-headingDesktop text-left leading-tight w-full px-4">
@@ -33,12 +43,12 @@ const Hero: React.FC = () => {
 
         {/* Image */}
         <motion.div
-          className="relative w-full h-[400px] md:h-[1000px] mt-8"
+          className="relative w-full h-[400px] md:h-[1000px] mt-16"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.3,
-            ease: [0.25, 0.1, 0.25, 1], // Added easing here
+            ease: [0.25, 0.1, 0.25, 1],
             delay: 0.3,
           }}
           style={{ scale }}
@@ -55,7 +65,7 @@ const Hero: React.FC = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

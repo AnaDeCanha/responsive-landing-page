@@ -17,13 +17,13 @@ module.exports = {
       roboto: ['"Roboto"', "sans-serif"],
     },
     fontSize: {
-      headingDesktop: ["96px", "92px"],
-      subheadingDesktop: ["64px", "68px"],
+      headingDesktop: ["120px", "116px"],
+      subheadingDesktop: ["96px", "96px"],
       text: ["16px", "24px"],
       smallText: ["14px", "20px"],
       buttonText: ["16px", "1"],
-      headingMobile: ["40px", "38px"],
-      subheadingMobile: ["38px", "36px"],
+      headingMobile: ["48px", "46px"],
+      subheadingMobile: ["40px", "40px"],
     },
     fontWeight: {
       regular: "400",

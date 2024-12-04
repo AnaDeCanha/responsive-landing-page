@@ -135,7 +135,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black bg-opacity-50"
+            className="fixed inset-0 bg-softWhite bg-opacity-50"
           />
 
           {/* Modal content */}
@@ -146,7 +146,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="max-w-[1012px] bg-light flex flex-col justify-center p-8 h-full md:h-[600px] md:p-32 w-full relative md:rounded-3xl shadow md:shadow-lg text-center"
+              className="max-w-[1012px] bg-softWhite flex flex-col justify-center p-8 h-full md:h-[600px] md:p-32 w-full relative md:rounded-3xl shadow md:shadow-lg text-center"
             >
               <WestIcon
                 fontSize="small"
@@ -183,7 +183,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         type="text"
                         name="name"
                         placeholder="Your Name"
-                        className="w-full p-3 mb-4 border-3xl rounded-3xl bg-light border-deepPurple placeholder-accent placeholder-opacity-50"
+                        className="w-full p-3 mb-4 border-3xl rounded-3xl bg-light border-deepPurple placeholder-accent"
                         required
                         value={formData.name}
                         onChange={handleChange}
