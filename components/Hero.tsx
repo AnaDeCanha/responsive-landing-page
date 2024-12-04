@@ -6,10 +6,12 @@ import Image from "next/image";
 
 const Hero: React.FC = () => {
   const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0.25, 0.5], [1, 1.5]);
+
+  // Scale animation: Grow, then shrink
+  const scale = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [1, 1.5, 1]);
 
   return (
-    <section className="relative w-full h-auto">
+    <section className="relative w-full h-auto overflow-hidden">
       <div className="flex flex-col items-center justify-center px-4 md:px-16 py-16">
         {/* Title */}
         <h1 className="font-poppins font-bold text-headingMobile md:text-headingDesktop text-left leading-tight w-full px-4">
@@ -31,19 +33,26 @@ const Hero: React.FC = () => {
 
         {/* Image */}
         <motion.div
-          className="relative w-full h-[400px] md:h-[1000px] px-4 md:px-16 mt-8 overflow-hidden rounded-[60px]"
+          className="relative w-full h-[400px] md:h-[1000px] mt-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
+          transition={{
+            duration: 0.3,
+            ease: [0.25, 0.1, 0.25, 1], // Added easing here
+            delay: 0.3,
+          }}
           style={{ scale }}
         >
-          <Image
-            src="/hero-image.webp"
-            alt="Hero section artwork"
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
+          <div className="overflow-hidden w-full h-full">
+            <Image
+              src="/hero-image.webp"
+              alt="Hero section artwork"
+              layout="fill"
+              objectFit="cover"
+              priority
+              className="rounded-[60px]"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
