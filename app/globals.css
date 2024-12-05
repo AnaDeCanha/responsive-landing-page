@@ -58,3 +58,13 @@ body {
     @apply ring-deepPurple bg-softWhite border-deepPurple;
   }
 }
+
+/* Hide scrollbar for all elements */
+.scroll-hide {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer */
+}
+
+.scroll-hide::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}

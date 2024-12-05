@@ -1,74 +1,74 @@
 "use client";
 
 import React from "react";
-import Card from "./Card";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import GestureIcon from "@mui/icons-material/Gesture";
-import ExploreIconOutlined from "@mui/icons-material/ExploreOutlined";
-import QuestionAnswerOutlinedIcon from "@mui/icons-material/QuestionAnswerOutlined";
+import Image from "next/image";
+
+interface CardProps {
+  backgroundImage: string;
+  title: string;
+  description: string;
+  delay?: number;
+}
+
+const Card: React.FC<CardProps> = ({ backgroundImage, title, description }) => {
+  return (
+    <div className="flex flex-col bg-softWhite rounded-xl shadow-lg w-full  min-w-[300px] h-[400px] relative overflow-hidden">
+      {/* Full-width Image */}
+      <div className="w-full h-[70%] relative">
+        <Image
+          src={backgroundImage}
+          alt={title}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+
+      {/* Text Container */}
+      <div className="p-6">
+        <h3 className="text-subheadingMobile font-bold text-darkText mb-2">
+          {title}
+        </h3>
+        <p className="text-text text-darkText">{description}</p>
+      </div>
+    </div>
+  );
+};
 
 const Services: React.FC = () => {
   const services = [
     {
-      icon: (
-        <LaptopMacIcon
-          fontSize="inherit"
-          className="text-primary"
-          style={{ fontSize: "80px" }}
-        />
-      ),
-      title: "Frontend Development",
-      description: "Building Together for a Better Web",
+      backgroundImage: "/service-1.webp",
+      title: "Custom Illustrations",
+      description: "One-of-a-kind artwork for individuals or brands.",
     },
     {
-      icon: (
-        <GestureIcon
-          fontSize="inherit"
-          className="text-primary"
-          style={{ fontSize: "80px" }}
-        />
-      ),
-      title: "UX Design Enthusiast",
-      description: "Creating Delightful User Experiences",
+      backgroundImage: "/service-2.webp",
+      title: "Brand Identity Design",
+      description: "Logos, banners, and visuals for your business.",
     },
     {
-      icon: (
-        <ExploreIconOutlined
-          fontSize="inherit"
-          className="text-primary"
-          style={{ fontSize: "80px" }}
-        />
-      ),
-      title: "Time Mastery Coaching",
-      description: "Unlock Your Productivity Potential",
-    },
-    {
-      icon: (
-        <QuestionAnswerOutlinedIcon
-          fontSize="inherit"
-          className="text-primary"
-          style={{ fontSize: "80px" }}
-        />
-      ),
-      title: "Language Learning Guidance",
-      description: "Embark on a Multilingual Journey",
+      backgroundImage: "/service-3.webp",
+      title: "Commissioned Artwork",
+      description: "Personalized art for gifts or special projects.",
     },
   ];
 
   return (
     <section
-      className="py-12 px-6 md:px-10 mx-auto flex flex-col gap-8"
+      className="py-12 px-6 md:px-16 mt-10 mx-auto flex flex-col gap-8"
       id="services"
     >
-      <h2 className="text-headingMobile md:text-headingDesktop font-bold text-darkText mb-8">
-        How I Can Help You
+      {/* Title */}
+      <h2 className="text-headingMobile md:text-headingDesktop font-bold text-darkText mb-12">
+        What We Create
       </h2>
 
-      <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+      {/* Cards */}
+      <div className="flex flex-col md:flex-row items-center gap-8  md:overflow-x-auto md:p-12 lg:px-0 scroll-hide">
         {services.map((service, index) => (
           <Card
             key={index}
-            icon={service.icon}
+            backgroundImage={service.backgroundImage}
             title={service.title}
             description={service.description}
             delay={index * 0.2}

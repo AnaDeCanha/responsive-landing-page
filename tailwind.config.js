@@ -23,7 +23,7 @@ module.exports = {
       smallText: ["14px", "20px"],
       buttonText: ["16px", "1"],
       headingMobile: ["48px", "46px"],
-      subheadingMobile: ["40px", "40px"],
+      subheadingMobile: ["32px", "32px"],
     },
     fontWeight: {
       regular: "400",

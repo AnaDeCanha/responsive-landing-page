@@ -11,7 +11,7 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <MessageCard />
-      {/* <Services /> */}
+      <Services />
       {/* <SideProjects /> */}
       {/* <Footer /> */}
     </>
