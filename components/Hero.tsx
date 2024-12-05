@@ -8,12 +8,12 @@ const Hero: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
   // Scale animation: Grow, then shrink
-  const scale = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [1, 1.5, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.1, 0.55], [1, 1.5, 1]);
 
   // Background color transition
   const backgroundColor = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.3, 0.5],
+    [0, 0.1, 0.2, 0.3],
     ["#FAFAFA", "#FAFAFA", "#FAFAFA", "#7D3C98"]
   );
 
@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
 
         {/* Image */}
         <motion.div
-          className="relative w-full h-[400px] md:h-[1000px] mt-16"
+          className="relative w-full h-[500px] md:h-[1000px] mt-16"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
