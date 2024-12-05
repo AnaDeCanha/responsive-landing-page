@@ -1,6 +1,6 @@
 "use client";
+
 import React, { useRef, useEffect, useState } from "react";
-import Image from "next/image";
 import { motion, useInView } from "motion/react";
 
 const MessageCard: React.FC = () => {
@@ -17,23 +17,34 @@ const MessageCard: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const textLines = [
+    "We craft daring and",
+    "captivating creations that",
+    "bring your vision to life.",
+  ];
+
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={
-        isMobile ? (isInView ? { opacity: 1, y: 0 } : {}) : { opacity: 1, y: 0 }
-      }
-      transition={{
-        duration: 0.7,
-        delay: isMobile ? 0.5 : 1.2, // Apply delay for desktop animation
-      }}
-      className="bg-deepPurple rounded-br-[60px] rounded-bl-[60px] w-full mx-auto p-8 md:p-8 relative flex justify-center"
+      className="bg-deepPurple rounded-br-[60px] rounded-bl-[60px] w-full mx-auto px-8 md:px-8 pb-16 relative flex justify-center"
     >
-      <p className="text-subheadingMobile md:text-subheadingDesktop text-brightYellow py-6 md:p-8 max-w-[720px]">
-        We craft bold, captivating art that brings your vision to life.
-      </p>
-    </motion.div>
+      <div className="text-subheadingMobile md:text-subheadingDesktop text-brightYellow py-6">
+        {textLines.map((line, index) => (
+          <motion.p
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{
+              duration: 0.7,
+              delay: index * 0.3, // Sequential arrival for each line
+            }}
+            className="mb-2"
+          >
+            {line}
+          </motion.p>
+        ))}
+      </div>
+    </div>
   );
 };
 
