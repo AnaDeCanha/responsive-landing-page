@@ -28,7 +28,7 @@ const MessageCard: React.FC = () => {
       ref={ref}
       className="bg-deepPurple rounded-br-[60px] rounded-bl-[60px] w-full mx-auto px-8 md:px-8 pb-16 relative flex justify-center"
     >
-      <div className="text-subheadingMobile md:text-subheadingDesktop text-brightYellow py-6">
+      <div className="text-subheadingMobile md:text-subheadingDesktop text-brightYellow py-16">
         {textLines.map((line, index) => (
           <motion.p
             key={index}

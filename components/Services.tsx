@@ -53,15 +53,16 @@ const Card: React.FC<CardProps> = ({
 const Services: React.FC = () => {
   const services = [
     {
-      backgroundImage: "/service-1.webp",
-      title: "Custom Illustrations",
-      description: "One-of-a-kind artwork for individuals or brands.",
-    },
-    {
       backgroundImage: "/service-2.webp",
       title: "Brand Identity Design",
       description: "Logos, banners, and visuals for your business.",
     },
+    {
+      backgroundImage: "/service-1.webp",
+      title: "Custom Illustrations",
+      description: "One-of-a-kind artwork for individuals or brands.",
+    },
+
     {
       backgroundImage: "/service-3.webp",
       title: "Commissioned Artwork",
