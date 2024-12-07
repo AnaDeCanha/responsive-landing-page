@@ -1,21 +1,19 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
-import { motion, useInView } from "motion/react";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 const MessageCard: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const [isMobile, setIsMobile] = useState(false);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"], // Animates as the card enters and exits the viewport
+  });
 
-  useEffect(() => {
-    // Detect screen size to determine mobile vs. desktop
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize(); // Set initial value
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  // Scale animation: Shrink as the user scrolls past
+  const scale = useTransform(scrollYProgress, [0.6, 1.5], [1, 0.8]);
 
   const textLines = [
     "We craft daring and",
@@ -24,9 +22,10 @@ const MessageCard: React.FC = () => {
   ];
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className="bg-deepPurple rounded-br-[60px] rounded-bl-[60px] w-full mx-auto px-8 md:px-8 pb-16 relative flex justify-center"
+      className="bg-deepPurple rounded-br-[60px] rounded-bl-[60px] w-full mx-auto px-8 md:px-8 md:pt-16 md:pb-[120px] relative flex justify-center"
+      style={{ scale }} // Apply scale animation
     >
       <div className="text-subheadingMobile md:text-subheadingDesktop text-brightYellow py-16">
         {textLines.map((line, index) => (
@@ -44,7 +43,7 @@ const MessageCard: React.FC = () => {
           </motion.p>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

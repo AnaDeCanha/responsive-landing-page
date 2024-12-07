@@ -8,12 +8,12 @@ const Hero: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
   // Scale animation: Grow, then shrink
-  const scale = useTransform(scrollYProgress, [0, 0.1, 0.55], [1, 1.5, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.1, 0.3], [1, 1.5, 1]);
 
   // Background color transition
   const backgroundColor = useTransform(
     scrollYProgress,
-    [0, 0.1, 0.2, 0.3],
+    [0, 0.1, 0.15, 0.18],
     ["#FAFAFA", "#FAFAFA", "#FAFAFA", "#7D3C98"]
   );
 
