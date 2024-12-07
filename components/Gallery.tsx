@@ -27,6 +27,17 @@ const Gallery: React.FC = () => {
       className="py-12 px-6 md:px-16 mt-10 mx-auto flex flex-col gap-8"
       id="gallery"
     >
+      {/* Title with animation */}
+      <motion.h2
+        className="text-headingMobile md:text-headingDesktop font-bold text-darkText mb-12"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        Our Work
+      </motion.h2>
+
       {/* Gallery Grid */}
       <div className="flex flex-col gap-6">
         {rows.map((row, rowIndex) => (
@@ -40,10 +51,11 @@ const Gallery: React.FC = () => {
                     : "md:min-h-[400px]"
                 } min-h-[300px]`}
                 initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
                 transition={{
-                  duration: 0.5,
-                  delay: imageIndex * 0.2, // Staggered animation
+                  duration: 0.7,
+                  delay: idx * 0.3,
                   ease: "easeOut",
                 }}
               >
