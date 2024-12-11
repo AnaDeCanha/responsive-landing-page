@@ -5,8 +5,8 @@ import { GitHub, YouTube, Instagram, Twitter } from "@mui/icons-material";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-softWhite text-midnightBlack py-16 px-6 md:px-16">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-16">
+    <footer className="text-midnightBlack py-16 px-6 md:px-16 bg-cover bg-center bg-no-repeat bg-[url('/footer-bg-mobile.png')] md:bg-[url('/footer-bg.png')]">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-16 text-center md:text-left">
         {/* Main Content Wrapper */}
         <div className="w-full md:w-1/2">
           {/* Newsletter Section */}
@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             </p>
             <Newsletter
               buttonColor={"bg-deepPurple text-softWhite"}
-              formColor="bg-softWhite"
+              formColor="bg-white"
             />
           </div>
 
@@ -25,9 +25,9 @@ const Footer: React.FC = () => {
             <p className="text-text font-regular">
               Connect with us on social media.
             </p>
-            <div className="flex gap-6 items-center">
+            <div className="flex gap-6 items-center justify-center md:justify-start">
               <a
-                href="https://github.com/AnaDeCanha"
+                href="https://anadecanha.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 flex-col text-deepPurple"
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                 <span className="text-text font-regular">GitHub</span>
               </a>
               <a
-                href="https://www.youtube.com/@AnaDeCanha"
+                href="https://anadecanha.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 flex-col text-deepPurple"
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                 <span className="text-text font-regular">YouTube</span>
               </a>
               <a
-                href="https://www.instagram.com/anadecanha/"
+                href="https://anadecanha.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 flex-col text-deepPurple"
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                 <span className="text-text font-regular">Instagram</span>
               </a>
               <a
-                href="https://twitter.com/anadecanha"
+                href="https://anadecanha.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 flex-col text-deepPurple"
@@ -63,35 +63,23 @@ const Footer: React.FC = () => {
                 <span className="text-text font-regular">Twitter</span>
               </a>
             </div>
-            <p className="text-text font-regular mt-6">
-              Discover more creative insights by following{" "}
-              <a
-                href="https://www.instagram.com/ux.pals/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-deepPurple underline underline-offset-4"
-              >
-                @UXPals
-              </a>
-              .
-            </p>
           </div>
         </div>
 
         {/* Footer Legal Section */}
-        <div className="border-t border-midnightBlack/20 pt-6 flex flex-col md:flex-row justify-between items-center">
+        <div className="pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-text text-sm font-regular text-center md:text-left">
             © SolCraft Studios {new Date().getFullYear()}. All Rights Reserved.
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a
-              href="/privacy-policy"
+              href="https://anadecanha.com"
               className="text-deepPurple underline text-sm font-regular hover:underline underline-offset-4"
             >
               Privacy Policy
             </a>
             <a
-              href="/cookie-policy"
+              href="https://anadecanha.com"
               className="text-deepPurple underline text-sm font-regular hover:underline underline-offset-4"
             >
               Cookie Policy
@@ -99,6 +87,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Add extra space on mobile to show background image */}
+      <div className="h-16 md:h-0"></div>
     </footer>
   );
 };
