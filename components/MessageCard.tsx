@@ -24,7 +24,7 @@ const MessageCard: React.FC = () => {
   return (
     <motion.div
       ref={ref}
-      className="bg-deepPurple rounded-br-[60px] rounded-bl-[60px] w-full mx-auto px-8 md:px-8 md:pt-16 md:pb-[120px] relative flex justify-center"
+      className="bg-deepPurple rounded-[60px] md:rounded-t-[0] mt-16 md:mt-0 w-full mx-auto px-8 md:px-8 md:py-16 relative flex justify-center"
       style={{ scale }} // Apply scale animation
     >
       <div className="text-subheadingMobile md:text-subheadingDesktop text-brightYellow py-16">
