@@ -174,53 +174,53 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               {/* Main Content */}
               {!isSubmitted ? (
                 <>
-                  <h2 className="text-subheadingMobile text-deepPurple md:text-subheadingDesktop font-semiBold my-6 text-deepPurple">
+                  <h2 className="text-headingMobile text-deepPurple font-semiBold my-6 text-deepPurple">
                     Let&apos;s Create Something Amazing Together!
                   </h2>
                   <form onSubmit={handleFormSubmit} noValidate>
-                    <div>
+                    <div className="mb-4">
                       <Input
                         type="text"
                         name="name"
                         placeholder="Your Name"
-                        className="w-full p-3 mb-4 border-3xl rounded-3xl bg-light border-deepPurple placeholder-accent"
+                        className="w-full p-3  border-3xl rounded-3xl bg-light border-deepPurple placeholder-accent"
                         required
                         value={formData.name}
                         onChange={handleChange}
                       />
                       {formErrors.name && (
-                        <p className="text-red-500 text-sm">
+                        <p className="text-smallText text-[red] text-left ml-2 mt-1">
                           {formErrors.name}
                         </p>
                       )}
                     </div>
-                    <div>
+                    <div className="mb-4">
                       <Input
                         type="email"
                         name="email"
                         placeholder="Your Email"
-                        className="w-full p-3 mb-4 rounded-3xl bg-light border-deepPurple placeholder-accent placeholder-opacity-50"
+                        className="w-full p-3 rounded-3xl bg-light border-deepPurple placeholder-accent placeholder-opacity-50"
                         required
                         value={formData.email}
                         onChange={handleChange}
                       />
                       {formErrors.email && (
-                        <p className="text-red-500 text-sm">
+                        <p className="text-smallText text-[red] text-left ml-2 mt-1">
                           {formErrors.email}
                         </p>
                       )}
                     </div>
-                    <div>
+                    <div className="mb-4">
                       <Textarea
                         name="message"
                         placeholder="Your Message"
-                        className="w-full p-3 mb-4  h-32 rounded-3xl bg-light border-deepPurple placeholder-accent placeholder-opacity-50"
+                        className="w-full p-3 h-32 rounded-3xl bg-light border-deepPurple placeholder-accent placeholder-opacity-50"
                         required
                         value={formData.message}
                         onChange={handleChange}
                       ></Textarea>
                       {formErrors.message && (
-                        <p className="text-red-500 text-sm">
+                        <p className="text-smallText text-[red] text-left ml-2 mt-1">
                           {formErrors.message}
                         </p>
                       )}
@@ -253,7 +253,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                 </>
               ) : (
                 <div className="flex flex-col items-center justify-center">
-                  <h2 className="text-subheadingMobile md:text-subheadingDesktop font-semiBold my-6 text-deepPurple">
+                  <h2 className="text-headingMobile font-semiBold my-6 text-deepPurple">
                     Thank you for reaching out!
                   </h2>
                   <p className="text-text leading-normal mb-4">
