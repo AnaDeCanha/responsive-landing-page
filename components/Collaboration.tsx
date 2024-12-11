@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 const testimonials = [
   {
@@ -28,17 +28,29 @@ const testimonials = [
 ];
 
 const Collaboration: React.FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  // Scale animation: Shrink as the user scrolls past
+  const scale = useTransform(scrollYProgress, [0.6, 1.5], [1, 0.7]);
+
   return (
-    <section
-      className="py-12 px-6 md:px-16 mt-10 mx-auto flex flex-col gap-8"
+    <motion.section
+      ref={ref}
+      className="py-12 pb-16 px-6 md:px-16 mt-10 mx-auto flex flex-col gap-8 rounded-b-[60px] bg-softWhite"
       id="collaboration"
+      style={{ scale }}
     >
       {/* Title */}
       <motion.h2
         className="text-headingMobile md:text-headingDesktop font-bold text-darkText mb-8"
         initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         Partnering with Visionaries
@@ -50,8 +62,7 @@ const Collaboration: React.FC = () => {
         <motion.div
           className="flex flex-col gap-6 w-full md:w-1/2"
           initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
         >
           {testimonials.map((testimonial, index) => (
@@ -72,8 +83,7 @@ const Collaboration: React.FC = () => {
         <motion.div
           className="w-full md:w-1/2 h-[500px] md:h-auto relative rounded-3xl overflow-hidden shadow-lg"
           initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
         >
           <Image
@@ -84,7 +94,7 @@ const Collaboration: React.FC = () => {
           />
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

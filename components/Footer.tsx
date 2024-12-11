@@ -1,11 +1,31 @@
 "use client";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Newsletter from "../components/Newsletter";
 import { GitHub, YouTube, Instagram, Twitter } from "@mui/icons-material";
+import { useInView } from "framer-motion";
 
 const Footer: React.FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-50px" });
+
+  useEffect(() => {
+    if (isInView) {
+      document.body.classList.add("bg-[#FFFFFF]");
+    } else {
+      document.body.classList.remove("bg-[#FFFFFF]");
+    }
+
+    // Cleanup to ensure consistent behavior
+    return () => {
+      document.body.classList.remove("bg-[#FFFFFF]");
+    };
+  }, [isInView]);
+
   return (
-    <footer className="text-midnightBlack py-16 px-6 md:px-16 bg-cover bg-center bg-no-repeat bg-[url('/footer-bg-mobile.png')] md:bg-[url('/footer-bg.png')]">
+    <footer
+      ref={ref}
+      className="text-midnightBlack py-16 px-6 md:px-16 bg-contain bg-center bg-no-repeat bg-[url('/footer-bg-mobile.png')] md:bg-[url('/footer-bg.png')]"
+    >
       <div className="max-w-[1200px] mx-auto flex flex-col gap-16 text-center md:text-left">
         {/* Main Content Wrapper */}
         <div className="w-full md:w-1/2">
@@ -69,7 +89,7 @@ const Footer: React.FC = () => {
         {/* Footer Legal Section */}
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-text text-sm font-regular text-center md:text-left">
-            © SolCraft Studios {new Date().getFullYear()}. All Rights Reserved.
+            © SolCraft Studios {new Date().getFullYear()}. All Rights Reserved
           </p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a
