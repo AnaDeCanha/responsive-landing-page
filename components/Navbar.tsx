@@ -15,8 +15,18 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-softWhite shadow-md rounded-b-3xl">
-      <div className="flex justify-between items-center w-full px-16 h-12 mx-auto">
-        <Image src="/logo-small.png" alt="Logo" width={150} height={100} />
+      <div className="flex justify-between items-center w-full px-4 md:px-16 h-12 mx-auto">
+        <div className="flex items-center">
+          <div className="block md:hidden px-4">
+            {/* Mobile Logo */}
+            <Image src="/s-icon.png" alt="Mobile Logo" width={15} height={15} />
+          </div>
+          <div className="hidden md:block">
+            {/* Desktop Logo */}
+            <Image src="/logo-small.png" alt="Logo" width={150} height={100} />
+          </div>
+        </div>
+
         <div className="flex space-x-4 font-poppins">
           <Link
             href="#services"
