@@ -183,13 +183,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         type="text"
                         name="name"
                         placeholder="Your Name"
-                        className="w-full p-3  border-3xl rounded-3xl bg-light border-deepPurple placeholder-accent"
+                        className="border-deepPurple placeholder-deepPurple w-full p-2 pl-5 mb-2 md:mb-0 border rounded-3xl placeholder-opacity-50"
                         required
                         value={formData.name}
                         onChange={handleChange}
                       />
                       {formErrors.name && (
-                        <p className="text-smallText text-[red] text-left ml-2 mt-1">
+                        <p className="text-smallText text-[red] text-left ml-2">
                           {formErrors.name}
                         </p>
                       )}
@@ -199,13 +199,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                         type="email"
                         name="email"
                         placeholder="Your Email"
-                        className="w-full p-3 rounded-3xl bg-light border-deepPurple placeholder-accent placeholder-opacity-50"
+                        className="border-deepPurple placeholder-deepPurple w-full p-2 pl-5 mb-2 md:mb-0 border rounded-3xl placeholder-opacity-50"
                         required
                         value={formData.email}
                         onChange={handleChange}
                       />
                       {formErrors.email && (
-                        <p className="text-smallText text-[red] text-left ml-2 mt-1">
+                        <p className="text-smallText text-[red] text-left ml-2">
                           {formErrors.email}
                         </p>
                       )}
@@ -214,13 +214,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                       <Textarea
                         name="message"
                         placeholder="Your Message"
-                        className="w-full p-3 h-32 rounded-3xl bg-light border-deepPurple placeholder-accent placeholder-opacity-50"
+                        className="border-deepPurple placeholder-deepPurple w-full p-2 pl-5 mb-2 md:mb-0 border rounded-3xl placeholder-opacity-50"
                         required
                         value={formData.message}
                         onChange={handleChange}
                       ></Textarea>
                       {formErrors.message && (
-                        <p className="text-smallText text-[red] text-left ml-2 mt-1">
+                        <p className="text-smallText text-[red] text-left ml-2">
                           {formErrors.message}
                         </p>
                       )}

@@ -12,7 +12,7 @@ interface NewsletterProps {
 }
 
 const Newsletter: React.FC<NewsletterProps> = ({
-  buttonColor = "bg-primary text-accent",
+  buttonColor = "bg-primary text-deepPurple",
   formColor = "bg-softWhite",
 }) => {
   const [loading, setLoading] = useState(false);
@@ -85,7 +85,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className={`${formColor} border-accent placeholder-accent w-full p-2 mb-2 md:mb-0 border rounded-md placeholder-opacity-50`}
+          className={`${formColor} border-deepPurple placeholder-deepPurple w-full p-2 pl-5 mb-2 md:mb-0 border rounded-3xl placeholder-opacity-50`}
         />
         <Button
           type="submit"
@@ -128,7 +128,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
             >
               <WestIcon
                 fontSize="small"
-                className="absolute top-6 left-6 text-accent cursor-pointer"
+                className="absolute top-6 left-6 text-deepPurple cursor-pointer"
                 onClick={() => setIsDialogOpen(false)}
               />
               <Image
