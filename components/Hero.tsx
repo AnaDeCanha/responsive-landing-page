@@ -19,9 +19,9 @@ const Hero: React.FC = () => {
   return (
     <motion.section
       style={{ backgroundColor }} // Apply dynamic background color
-      className="relative w-full h-auto overflow-hidden mt-16"
+      className="relative w-full h-auto overflow-hidden mt-16 rounded-[60px] md:rounded-none"
     >
-      <div className="flex flex-col items-center justify-center px-4 md:px-16 pb-6 md:py-16">
+      <div className="flex flex-col items-center justify-center px-4 md:px-16 pb-4 md:py-16">
         {/* Title */}
         <h1 className="font-poppins font-bold text-headingMobile md:text-headingDesktop text-left leading-tight w-full px-4">
           <motion.div
