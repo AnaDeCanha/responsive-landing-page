@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 
 const Hero: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -41,7 +40,7 @@ const Hero: React.FC = () => {
           </motion.div>
         </h1>
 
-        {/* Image */}
+        {/* Video */}
         <motion.div
           className="relative w-full h-[500px] md:h-[1000px] mt-16"
           initial={{ opacity: 0, y: 50 }}
@@ -53,14 +52,14 @@ const Hero: React.FC = () => {
           }}
           style={{ scale }}
         >
-          <div className="overflow-hidden w-full h-full">
-            <Image
-              src="/hero-image.webp"
-              alt="Hero section artwork"
-              layout="fill"
-              objectFit="cover"
-              priority
-              className="rounded-[60px]"
+          <div className="overflow-hidden w-full h-full rounded-[60px]">
+            <video
+              src="/illustration-transitions.mp4" // Replace with your video path
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover rounded-[60px]"
             />
           </div>
         </motion.div>
