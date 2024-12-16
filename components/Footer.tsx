@@ -47,7 +47,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex gap-6 items-center justify-center md:justify-start">
               <a
-                href="https://anadecanha.com"
+                href="https://github.com/AnaDeCanha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 flex-col text-deepPurple"
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                 <span className="text-text font-regular">GitHub</span>
               </a>
               <a
-                href="https://anadecanha.com"
+                href="https://www.youtube.com/@AnaDeCanha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 flex-col text-deepPurple"
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
                 <span className="text-text font-regular">YouTube</span>
               </a>
               <a
-                href="https://anadecanha.com"
+                href="https://www.instagram.com/anadecanha/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 flex-col text-deepPurple"
@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
                 <span className="text-text font-regular">Instagram</span>
               </a>
               <a
-                href="https://anadecanha.com"
+                href="https://twitter.com/anadecanha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 flex-col text-deepPurple"
