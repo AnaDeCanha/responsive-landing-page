@@ -13,12 +13,13 @@ interface NewsletterProps {
 
 const Newsletter: React.FC<NewsletterProps> = ({
   buttonColor = "bg-primary text-accent",
-  formColor = "bg-light",
+  formColor = "bg-softWhite",
 }) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isErrorDialogOpen, setIsErrorDialogOpen] = useState(false);
+  const [formError, setFormError] = useState<string>("");
 
   const successDialogRef = useRef<HTMLDivElement>(null);
   const errorDialogRef = useRef<HTMLDivElement>(null);
@@ -33,30 +34,35 @@ const Newsletter: React.FC<NewsletterProps> = ({
     }
   }, [isErrorDialogOpen]);
 
+  const validateEmail = (email: string): boolean => {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+  };
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setFormError("");
 
-    try {
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
+    if (!validateEmail(email)) {
+      setFormError("Please enter a valid email address.");
+      setLoading(false);
+      return;
+    }
 
-      if (!response.ok) {
-        const { error } = await response.json();
-        throw new Error(error || "Subscription failed");
+    // Simulated subscription function
+    setTimeout(() => {
+      const success = Math.random() > 0.2; // 80% chance of success
+
+      if (success) {
+        setIsDialogOpen(true);
+        setEmail("");
+      } else {
+        setIsErrorDialogOpen(true);
       }
 
-      setIsDialogOpen(true);
-      setEmail("");
-    } catch (error) {
-      console.error(error);
-      setIsErrorDialogOpen(true);
-    } finally {
       setLoading(false);
-    }
+    }, 1500);
   };
 
   return (
@@ -79,17 +85,22 @@ const Newsletter: React.FC<NewsletterProps> = ({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className={`${formColor} border-accent placeholder-accent w-full p-2 mb-4 md:mb-0 border rounded-md placeholder-opacity-50`}
+          className={`${formColor} border-accent placeholder-accent w-full p-2 mb-2 md:mb-0 border rounded-md placeholder-opacity-50`}
         />
         <Button
           type="submit"
           disabled={loading}
-          className={`${buttonColor} rounded-md  font-bold text-buttonText py-4 px-10  ${
+          className={`${buttonColor} rounded-[60px]  font-bold text-buttonText py-4 px-10  ${
             loading ? "opacity-50 cursor-not-allowed " : "hover:underline"
           }`}
         >
           {loading ? "SENDING..." : "SUBSCRIBE"}
         </Button>
+        {formError && (
+          <p className="text-smallText text-red-500 text-left mt-2">
+            {formError}
+          </p>
+        )}
       </motion.form>
 
       {/* Subscription Confirmation Dialog */}
@@ -113,7 +124,7 @@ const Newsletter: React.FC<NewsletterProps> = ({
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className="relative bg-light py-16 px-20 rounded-md shadow-lg max-w-md mx-auto"
+              className="relative bg-softWhite py-16 px-20 rounded-md shadow-lg max-w-md mx-auto"
             >
               <WestIcon
                 fontSize="small"
@@ -123,62 +134,18 @@ const Newsletter: React.FC<NewsletterProps> = ({
               <Image
                 src="/s-icon.png"
                 alt="Logo"
-                width={40}
-                height={40}
+                width={15}
+                height={15}
                 className="absolute bottom-6 right-6"
               />
               <div>
-                <DialogTitle className="text-subheadingDesktop font-semibold text-darkText">
-                  ¡Gracias por suscribirte!
+                <DialogTitle className="text-subheadingMobile  font-semibold text-darkText">
+                  ¡Thanks for subscribing!
                 </DialogTitle>
                 <p className="text-text mt-2 text-darkText">
                   Please check your email to confirm your subscription. And
                   don’t forget to peek in the spam folder if you don’t see it
-                  right away 🥰
-                </p>
-              </div>
-            </motion.div>
-          </Dialog>
-        )}
-      </AnimatePresence>
-
-      {/* Error Dialog */}
-      <AnimatePresence>
-        {isErrorDialogOpen && (
-          <Dialog
-            open={isErrorDialogOpen}
-            onClose={() => setIsErrorDialogOpen(false)}
-            className="fixed inset-0 z-50 flex items-center justify-center"
-          >
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black opacity-50"
-              aria-hidden="true"
-            />
-            <motion.div
-              ref={errorDialogRef}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3 }}
-              className="relative bg-light py-16 px-20 rounded-md shadow-lg max-w-md mx-auto"
-            >
-              <Image
-                src="/s-icon.png"
-                alt="Logo"
-                width={40}
-                height={40}
-                className="absolute bottom-6 right-6"
-              />
-              <div>
-                <DialogTitle className="text-subheadingDesktop font-semibold text-darkText">
-                  Oops! Something went wrong.
-                </DialogTitle>
-                <p className="text-text mt-2 text-darkText">
-                  There was an issue subscribing. Please try again in a few
-                  moments. ¡Gracias!
+                  right away
                 </p>
               </div>
             </motion.div>
