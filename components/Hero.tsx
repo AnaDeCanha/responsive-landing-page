@@ -7,12 +7,12 @@ const Hero: React.FC = () => {
   const { scrollYProgress } = useScroll();
 
   // Scale animation: Grow, then shrink
-  const scale = useTransform(scrollYProgress, [0, 0.1, 0.3], [1, 1.5, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1.2, 1]);
 
   // Background color transition
   const backgroundColor = useTransform(
     scrollYProgress,
-    [0, 0.1, 0.15, 0.18],
+    [0, 0.1, 0.11, 0.12],
     ["#FAFAFA", "#FAFAFA", "#FAFAFA", "#7D3C98"]
   );
 
@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
       style={{ backgroundColor }} // Apply dynamic background color
       className="relative w-full h-auto overflow-hidden mt-16"
     >
-      <div className="flex flex-col items-center justify-center px-4 md:px-16 py-16">
+      <div className="flex flex-col items-center justify-center px-4 md:px-16 pb-6 md:py-16">
         {/* Title */}
         <h1 className="font-poppins font-bold text-headingMobile md:text-headingDesktop text-left leading-tight w-full px-4">
           <motion.div
