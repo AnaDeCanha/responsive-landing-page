@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
     >
       <div className="flex flex-col items-center justify-center px-4 md:px-16 pb-4 md:py-16">
         {/* Title */}
-        <h1 className="font-poppins font-bold text-headingMobile md:text-headingDesktop text-left leading-tight w-full px-4">
+        <h1 className="font-poppins font-bold text-headingMobile md:text-headingDesktop text-left leading-tight w-full">
           <motion.div
             initial={{ opacity: 0, y: 50, clipPath: "inset(0 0 100% 0)" }}
             animate={{ opacity: 1, y: 0, clipPath: "inset(0 0 0 0)" }}
