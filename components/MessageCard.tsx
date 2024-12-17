@@ -35,7 +35,7 @@ const MessageCard: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{
               duration: 0.7,
-              delay: index * 0.3, // Sequential arrival for each line
+              delay: index * 0.6, // Sequential arrival for each line
             }}
             className="mb-2"
           >
