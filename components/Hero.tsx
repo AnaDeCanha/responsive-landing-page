@@ -60,6 +60,7 @@ const Hero: React.FC = () => {
               muted
               playsInline
               className="w-full h-full object-cover rounded-[60px]"
+              poster="/hero-image.webp"
             />
           </div>
         </motion.div>

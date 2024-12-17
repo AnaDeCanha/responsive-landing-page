@@ -19,11 +19,23 @@ const Navbar: React.FC = () => {
         <div className="flex items-center">
           <div className="block md:hidden px-4">
             {/* Mobile Logo */}
-            <Image src="/s-icon.png" alt="Mobile Logo" width={15} height={15} />
+            <Image
+              src="/s-icon.png"
+              priority={true}
+              alt="Mobile Logo"
+              width={15}
+              height={15}
+            />
           </div>
           <div className="hidden md:block">
             {/* Desktop Logo */}
-            <Image src="/logo-small.png" alt="Logo" width={150} height={100} />
+            <Image
+              src="/logo-small.png"
+              priority={true}
+              alt="Logo"
+              width={150}
+              height={100}
+            />
           </div>
         </div>
 
