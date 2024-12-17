@@ -2,7 +2,22 @@
 
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useMediaQuery } from "react-responsive"; // For media query detection
+
+// Custom hook to detect mobile viewport
+const useIsMobile = (maxWidth: number = 768): boolean => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkIsMobile = () =>
+      setIsMobile(window.matchMedia(`(max-width: ${maxWidth}px)`).matches);
+    checkIsMobile(); // Initial check
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, [maxWidth]);
+
+  return isMobile;
+};
 
 const Hero: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -17,8 +32,8 @@ const Hero: React.FC = () => {
     ["#FAFAFA", "#FAFAFA", "#FAFAFA", "#7D3C98"]
   );
 
-  // Detect if it's a mobile device
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  // Mobile detection
+  const isMobile = useIsMobile();
 
   return (
     <motion.section
@@ -49,20 +64,15 @@ const Hero: React.FC = () => {
           className="relative w-full h-[500px] md:h-[1000px] mt-16"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.3,
-            ease: [0.25, 0.1, 0.25, 1],
-            delay: 0.3,
-          }}
+          transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
           style={{ scale }}
         >
           <div className="overflow-hidden w-full h-full rounded-[60px]">
-            {/* Conditionally render video */}
             <video
               src={
                 isMobile
-                  ? "/illustration-transitions-mobile.mp4" // Mobile video
-                  : "/illustration-transitions.mp4" // Desktop video
+                  ? "/illustration-transitions-mobile.mp4" // Mobile version
+                  : "/illustration-transitions.mp4" // Desktop version
               }
               autoPlay
               loop

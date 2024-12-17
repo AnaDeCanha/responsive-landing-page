@@ -1,25 +1,44 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import React, { useRef } from "react";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  Variants,
+} from "framer-motion";
 
 const MessageCard: React.FC = () => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  // Scroll-based scale animation
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"], // Animates as the card enters and exits the viewport
+    offset: ["start end", "end start"],
   });
-
-  // Scale animation: Shrink as the user scrolls past
   const scale = useTransform(scrollYProgress, [0.6, 1.5], [1, 0.8]);
 
+  // Text lines for animation
   const textLines = [
     "We craft daring and",
     "captivating creations that",
     "bring your vision to life.",
   ];
+
+  // Variants for staggered animations
+  const lineVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        delay: index * 0.3, // Slight delay for staggered effect
+      },
+    }),
+  };
 
   return (
     <motion.div
@@ -31,13 +50,11 @@ const MessageCard: React.FC = () => {
         {textLines.map((line, index) => (
           <motion.p
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{
-              duration: 0.7,
-              delay: index * 0.6, // Sequential arrival for each line
-            }}
             className="mb-2"
+            variants={lineVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            custom={index} // Pass index for staggered delay
           >
             {line}
           </motion.p>
