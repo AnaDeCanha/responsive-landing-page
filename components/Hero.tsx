@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useMediaQuery } from "react-responsive"; // For media query detection
 
 const Hero: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -16,9 +17,12 @@ const Hero: React.FC = () => {
     ["#FAFAFA", "#FAFAFA", "#FAFAFA", "#7D3C98"]
   );
 
+  // Detect if it's a mobile device
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   return (
     <motion.section
-      style={{ backgroundColor }} // Apply dynamic background color
+      style={{ backgroundColor }}
       className="relative w-full h-auto overflow-hidden mt-16 rounded-[60px] md:rounded-none"
     >
       <div className="flex flex-col items-center justify-center px-4 md:px-16 pb-4 md:py-16">
@@ -53,14 +57,19 @@ const Hero: React.FC = () => {
           style={{ scale }}
         >
           <div className="overflow-hidden w-full h-full rounded-[60px]">
+            {/* Conditionally render video */}
             <video
-              src="/illustration-transitions.mp4" // Replace with your video path
+              src={
+                isMobile
+                  ? "/illustration-transitions-mobile.mp4" // Mobile video
+                  : "/illustration-transitions.mp4" // Desktop video
+              }
               autoPlay
               loop
               muted
               playsInline
               className="w-full h-full object-cover rounded-[60px]"
-              poster="/hero-image.webp"
+              poster={isMobile ? "/hero-image-mobile.webp" : "/hero-image.webp"}
             />
           </div>
         </motion.div>
