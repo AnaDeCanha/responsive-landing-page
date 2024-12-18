@@ -2,15 +2,11 @@
 
 A portfolio project to explore web animations with Motion (formerly Framer Motion) while building a creative landing page.
 
----
-
 ## 🎯 **Project Purpose**
 
 This project was an experiment to learn and practice animation techniques using Motion. I challenged myself to build a landing page for a fictional digital art studio, **SolCraft Studios**, while exploring scroll-triggered animations, tween animations, and interactive elements.
 
 The main goal was to enhance my skills in creating engaging, dynamic user experiences and showcase these abilities in my portfolio.
-
----
 
 ## 💻 **Tech Stack**
 
@@ -18,8 +14,6 @@ The main goal was to enhance my skills in creating engaging, dynamic user experi
 - **Languages:** TypeScript
 - **Styling:** Tailwind CSS, Headless UI
 - **Animations:** Motion (Framer Motion)
-
----
 
 ## 📖 **The Process**
 
@@ -70,8 +64,6 @@ Considering the target audience for SolCraft Studios (desktop users like illustr
 
 > ![Footer Animations](./public/footer-gif.gif)
 
----
-
 ## 💡 **What I Learned**
 
 ### **Technical Skills**
@@ -88,22 +80,16 @@ Through this project, I identified key areas to focus on in my next projects:
 - **Optimization:** Incorporating performance considerations from the beginning.
 - **React Suspense:** Exploring this feature to handle asynchronous rendering efficiently.
 
----
-
 ## 🔧 **Challenges I Faced**
 
 - Starting from scratch with Motion required revisiting animation basics and exploring the library’s capabilities.
 - Breaking down and replicating animations from real-world examples was challenging but rewarding, improving my problem-solving skills.
-
----
 
 ## 🌟 **How This Project Prepares Me for a Role**
 
 - **Real-World Simulation:** By following a client-like brief, I demonstrated adaptability to creative constraints and practical problem-solving.
 - **Proven Learning Ability:** This project shows my ability to learn new tools, experiment, and deliver results that align with real-world needs.
 - **Portfolio Showcase:** It highlights my technical skills in creating dynamic, visually engaging user experiences.
-
----
 
 ## 🌱 **Next Steps for Me**
 
@@ -112,8 +98,6 @@ While this project is complete, I plan to focus on the following in future proje
 - Understanding hydration errors and improving server-side rendering workflows.
 - Starting performance optimization early in the development process.
 - Exploring advanced React features like Suspense to handle asynchronous tasks.
-
----
 
 ## 🤝 **Acknowledgments**
 
