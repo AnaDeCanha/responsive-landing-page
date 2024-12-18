@@ -1,4 +1,4 @@
-![Header](./public/notion-cover-filled.png)
+![Header](./public/readme/notion-cover-filled.png)
 
 # SolCraft Studios Landing Page ✨
 
@@ -51,21 +51,21 @@ Considering the target audience for SolCraft Studios (desktop users like illustr
 - The **hero video** grows dynamically as the user scrolls and then returns to its original size.
 - The **background color** transitions to match the background of the next section, creating a seamless visual flow.
 
-> ![Hero Animation](./public/hero-gif.gif)
+> ![Hero Animation](./public/readme/hero-gif.gif)
 
 #### **Gallery and Services Sections Animations**
 
 - **Cards**: Subtle hover animations enhance the interactivity.
 - **Images**: Smooth entrance animations as the user scrolls into view.
 
-> ![Cards and Images Animations](./public/cards-animations.gif)
+> ![Cards and Images Animations](./public/readme/cards-animations.gif)
 
 #### **Footer Animations**
 
 - While the user scrolls, the entire page background lightens gradually, creating a cohesive transition to the footer.
 - The **last section shrinks** as the footer comes into view, creating a dynamic end to the scrolling experience.
 
-> ![Footer Animations](./public/footer-gif.gif)
+> ![Footer Animations](./public/readme/footer-gif.gif)
 
 ## 💡 **What I Learned**
 
@@ -107,4 +107,4 @@ While this project is complete, I plan to focus on the following in future proje
 - Inspiration for animations and transitions was taken from the [Humaan website](https://www.humaan.com/).
 - The footer design was influenced by an article on [Webflow Blog](https://webflow.com/blog/website-footer-design-examples?utm_source=google&utm_medium=search&utm_campaign=SS-GoogleSearch-Nonbrand-DynamicSearchAds-Tier2&utm_term=aud-520005535089:dsa-1729073405028___617245336990__&gad_source=1&gclid=CjwKCAiAjeW6BhBAEiwAdKltMnHNAQZYVJdNAhlII38MCmp-oYFeaFG9kxv2VNC6RgVHzJejJR59XBoC07EQAvD_BwE).
 
-![Footer](./public/notion-footer.png)
+![Footer](./public/readme/notion-footer.png)
