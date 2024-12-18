@@ -1,7 +1,7 @@
 ![Header](./public/notion-cover-filled.png)
 
-> # SolCraft Studios Landing Page ✨
->
+# SolCraft Studios Landing Page ✨
+
 > 💬 _¡Hola!_ Welcome to my project! This is a landing page I built to explore animations with Motion (formerly Framer Motion). 🎨  
 > I had so much fun learning and experimenting with dynamic web animations while working on this. You can **[check out the live site here!](https://responsive-landing-page-woad.vercel.app/)** and see it in action. 💕
 
