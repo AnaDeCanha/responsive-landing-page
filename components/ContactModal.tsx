@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Dialog } from "@headlessui/react";
 import WestIcon from "@mui/icons-material/West";
 import YouTubeIcon from "@mui/icons-material/YouTube";
@@ -37,6 +37,11 @@ const ContactModal: React.FC<ContactModalProps> = React.memo(
     const [loading, setLoading] = useState(false);
     const [submissionStatus, setSubmissionStatus] = useState("");
 
+    const handleModalClose = useCallback(() => {
+      resetForm();
+      onClose();
+    }, [onClose]);
+
     // Click outside to close
     useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
@@ -50,7 +55,7 @@ const ContactModal: React.FC<ContactModalProps> = React.memo(
       document.addEventListener("mousedown", handleClickOutside);
       return () =>
         document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
+    }, [handleModalClose]);
 
     const resetForm = () => {
       setFormData({ name: "", email: "", message: "" });
@@ -107,11 +112,6 @@ const ContactModal: React.FC<ContactModalProps> = React.memo(
       } finally {
         setLoading(false);
       }
-    };
-
-    const handleModalClose = () => {
-      resetForm();
-      onClose();
     };
 
     return (
@@ -319,4 +319,5 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => (
   </a>
 );
 
+ContactModal.displayName = "ContactModal";
 export default ContactModal;

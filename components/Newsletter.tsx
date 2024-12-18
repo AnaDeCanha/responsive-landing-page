@@ -22,7 +22,6 @@ const Newsletter: React.FC<NewsletterProps> = ({
   const [formError, setFormError] = useState<string>("");
 
   const successDialogRef = useRef<HTMLDivElement>(null);
-  const errorDialogRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isErrorDialogOpen) {
