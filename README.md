@@ -1,3 +1,5 @@
+![Header](./public/notion-cover-filled.png)
+
 # SolCraft Studios Landing Page ✨
 
 A portfolio project to explore web animations with Motion (formerly Framer Motion) while building a creative landing page.
@@ -103,3 +105,5 @@ While this project is complete, I plan to focus on the following in future proje
 
 - Inspiration for animations and transitions was taken from the [Humaan website](https://www.humaan.com/).
 - The footer design was influenced by an article on [Webflow Blog](https://webflow.com/blog/website-footer-design-examples?utm_source=google&utm_medium=search&utm_campaign=SS-GoogleSearch-Nonbrand-DynamicSearchAds-Tier2&utm_term=aud-520005535089:dsa-1729073405028___617245336990__&gad_source=1&gclid=CjwKCAiAjeW6BhBAEiwAdKltMnHNAQZYVJdNAhlII38MCmp-oYFeaFG9kxv2VNC6RgVHzJejJR59XBoC07EQAvD_BwE).
+
+![Footer](./public/notion-footer.png)
