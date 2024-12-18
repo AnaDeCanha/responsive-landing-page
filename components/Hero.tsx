@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
               muted
               playsInline
               className="w-full h-full object-cover rounded-[60px]"
-              poster={isMobile ? "/hero-image-mobile.webp" : "/hero-image.webp"}
+              poster="/gallery-1.webp"
             />
           </div>
         </motion.div>
