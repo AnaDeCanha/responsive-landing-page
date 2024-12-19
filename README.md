@@ -2,7 +2,7 @@
 
 # SolCraft Studios Landing Page ✨
 
-> 💬 _¡Hola!_ Welcome to my project! This is a landing page I built to explore animations with Motion (formerly Framer Motion). 🎨  
+> 💬 ¡Hola! Welcome to my project! This is a landing page I built to explore animations with Motion (formerly Framer Motion). 🎨  
 > I had so much fun learning and experimenting with dynamic web animations while working on this. You can **[check out the live site here!](https://responsive-landing-page-woad.vercel.app/)** and see it in action. 💕
 
 ## 🎯 **Project Purpose**
@@ -55,8 +55,8 @@ Considering the target audience for SolCraft Studios (desktop users like illustr
 
 #### **Gallery and Services Sections Animations**
 
-- **Cards**: Subtle hover animations enhance the interactivity.
-- **Images**: Smooth entrance animations as the user scrolls into view.
+- **Cards**: Smooth entrance animations as the user scrolls into view.
+- **Images**: Slowly appear as the user scrolls into view.
 
 > ![Cards and Images Animations](./public/readme/cards-animations.gif)
 
